@@ -7,5 +7,6 @@ public interface Constant {
     String UPDATE_TIME = "updateTime";
     // 逻辑删除
     String DELETE_FLAG = "deleteFlag";
+    String DELETED_FLAG ="deletedFlag" ;
 
 }

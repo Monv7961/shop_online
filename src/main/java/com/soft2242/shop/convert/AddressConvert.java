@@ -2,7 +2,7 @@ package com.soft2242.shop.convert;
 
 import com.soft2242.shop.entity.UserShippingAddress;
 import com.soft2242.shop.vo.AddressVO;
-import org.apache.ibatis.annotations.Mapper;
+import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
 import java.util.List;

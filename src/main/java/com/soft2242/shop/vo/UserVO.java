@@ -1,7 +1,5 @@
 package com.soft2242.shop.vo;
 
-
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.soft2242.shop.common.utils.DateUtils;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -16,7 +14,7 @@ public class UserVO {
     @Schema(description = "登录token")
     private String token;
     @Schema(description = "主键id")
-    //@NotNull(message = "用户Id 不能为空")
+    @NotNull(message = "用户Id 不能为空")
     private Integer Id;
     @Schema(description = "用户手机号")
     private String mobile;

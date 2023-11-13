@@ -2,9 +2,7 @@ package com.soft2242.shop.common.utils;
 
 import com.soft2242.shop.common.exception.ServerException;
 import com.soft2242.shop.common.result.Result;
-
 import com.soft2242.shop.entity.User;
-import com.soft2242.shop.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,5 +20,13 @@ public class ObtainUserIdUtils {
         return userId;
     }
 
+    @Operation(summary = "用户详情")
+    @GetMapping("/profile")
+    private Result<User> getUserInfo(HttpServletRequest request) {
+        Integer userId = getUserId(request);
+//        User userInfo = userService.getUserInfo(userId);
+//        return Result.ok(userInfo);
+        return null;
+    }
 }
 

@@ -66,6 +66,7 @@ public class MybatisGen {
 
     // 处理 all 情况
     protected static List<String> getTables(String tables) {
+        System.out.println("成功！");
         return "all".equals(tables) ? Collections.emptyList() : Arrays.asList(tables.split(","));
     }
 

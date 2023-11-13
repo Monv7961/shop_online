@@ -2,7 +2,6 @@ package com.soft2242.shop.common.exception;
 
 import com.soft2242.shop.common.result.Result;
 import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.validation.BindException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ExceptionHandler;

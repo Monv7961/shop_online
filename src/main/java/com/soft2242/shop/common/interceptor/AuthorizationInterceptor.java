@@ -8,7 +8,11 @@ import com.soft2242.shop.vo.UserTokenVO;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerInterceptor;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.Map;
 
@@ -51,4 +55,20 @@ public class AuthorizationInterceptor implements HandlerInterceptor {
         }
         return true;
     }
+
+    @Configuration
+    public class WebMvcConfig implements WebMvcConfigurer {
+        @Bean
+        public AuthorizationInterceptor getAuthorizationInterceptor() {
+            return new AuthorizationInterceptor();
+        }
+
+
+        //    将需要登录拦截器配置到容器中，并配置不被拦截的路径
+        @Override
+        public void addInterceptors(InterceptorRegistry registry) {
+            registry.addInterceptor(getAuthorizationInterceptor()).addPathPatterns("/user/profile/**").addPathPatterns("/member/**").addPathPatterns("/order/**").addPathPatterns("/cart/**").addPathPatterns("/address/**");
+        }
+    }
+
 }

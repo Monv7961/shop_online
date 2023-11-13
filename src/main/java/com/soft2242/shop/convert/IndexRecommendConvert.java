@@ -1,9 +1,9 @@
 package com.soft2242.shop.convert;
 
-import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.soft2242.shop.entity.IndexRecommend;
 import com.soft2242.shop.vo.IndexRecommendVO;
-import org.apache.ibatis.annotations.Mapper;
+import org.apache.commons.lang3.StringUtils;
+import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
