@@ -8,7 +8,7 @@ spring:
   datasource: # ????????
     type: com.zaxxer.hikari.HikariDataSource          # ??????HikariCP
     driver-class-name: com.mysql.cj.jdbc.Driver       # mysql ??
-    url: jdbc:mysql://127.0.0.1:3306/shop_online?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=GMT%2B8 # ?8?
+    url: jdbc:mysql://localhost:3306/shop_online?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=GMT%2B8 # ?8?
     username: root
     password: monv7961
     hikari:
