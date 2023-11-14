@@ -34,7 +34,7 @@ spring:
       #redis???????
       port: 6379
       #redis????
-      password: monv7961
+#      password: monv7961
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml
