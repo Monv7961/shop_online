@@ -12,6 +12,7 @@ import com.soft2242.shop.query.EditCartQuery;
 import com.soft2242.shop.service.UserShoppingCartService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.soft2242.shop.vo.CartGoodsVO;
+import io.swagger.models.auth.In;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -113,5 +114,18 @@ public class UserShoppingCartServiceImpl extends ServiceImpl<UserShoppingCartMap
         List<UserShoppingCart> deleteCartList = cartList.stream().filter(item -> ids.contains(item.getId())).collect(Collectors.toList());
         //3.删除购物信息
         removeBatchByIds(deleteCartList);
+    }
+
+    @Override
+    public void editCartSelected(Boolean selected, Integer userId){
+        //1.查询用户的购物车列表
+        List<UserShoppingCart> cartList = baseMapper.selectList(new LambdaQueryWrapper<UserShoppingCart>().eq(UserShoppingCart::getUserId,userId));
+        if (cartList.size() == 0){
+            return;
+        }
+        //2.批量修改购物车选中状态
+        cartList.stream().forEach(item -> item.setSelected(selected));
+        //3.数据库数据更新
+        saveOrUpdateBatch(cartList);
     }
 }
